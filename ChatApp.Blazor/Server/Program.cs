@@ -1,6 +1,6 @@
 using ChatApp.Blazor.Server;
 using ChatApp.Blazor.Server.Data;
-using ChatApp.Blazor.Server.Models;
+using ChatApp.Blazor.Shared.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,11 +18,11 @@ public class Program
 
         builder.Services.AddSignalR();
 
-        builder.Services.AddDefaultIdentity<ApplicationUsers>(options => options.SignIn.RequireConfirmedAccount = true)
+        builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
         builder.Services.AddIdentityServer()
-            .AddApiAuthorization<ApplicationUsers, ApplicationDbContext>();
+            .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
 
         builder.Services.AddAuthentication()
             .AddIdentityServerJwt();
