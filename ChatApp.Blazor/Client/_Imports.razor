@@ -1,5 +1,6 @@
 ﻿@using System.Net.Http
 @using System.Net.Http.Json
+@using ChatApp.Blazor.Client.Manager;
 @using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.AspNetCore.Components.Routing
@@ -10,3 +11,10 @@
 @using ChatApp.Blazor.Client
 @using ChatApp.Blazor.Client.Shared
 @using MudBlazor
+@inject NavigationManager _navigationManager
+@inject ISnackbar _snackBar
+@inject IJSRuntime _jsRuntime
+@inject AuthenticationStateProvider _stateProvider;
+
+@using ChatApp.Blazor.Client.Manager
+@inject IChatManager _chatManager
