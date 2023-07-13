@@ -40,7 +40,7 @@
                 <MudText Typo="Typo.h6" Inline="true" Class="mr-2">#</MudText>
                 <MudText Typo="Typo.h6">contacts</MudText>
             </MudToolBar>
-            <div class="d-flex flex-column px-4" style="max-height:70vh;min-height:70vh; overflow:scroll;">
+        <div class="d-flex flex-column px-4" id="chatContainer" style="max-height:70vh;min-height:70vh; overflow:scroll;">
                 <MudList Clickable="true">
                 @foreach (var user in ChatUsers)
                 {
